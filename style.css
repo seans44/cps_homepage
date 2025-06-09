@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'TTLakes';
+    src: url('fonts/TTLakes-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'TTLakes';
+    src: url('fonts/TTLakes-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    background-color: #F8F8F8;
+    height: 800px;
+    margin: 0;
+    font-family: 'TTLakes', serif;
+    font-size: 14px;
+    color: #1B1C21;
+}
+
+/** HEADER **/
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 88px;
+    background: #FFFFFF;
+    padding: 0 16px;
+    border-bottom: 1px solid #D9FFF5;
+}
+
+.header__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.header__logo {
+    height: 50.81px;
+    width: 96.55px;
+}
+
+.header__line {
+    display: flex;
+    border-left: 2px solid #EAEAEA;
+    height: 32px;
+}
+
+.header__block-1 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+    width: max(100%, 100%);
+}
+
+.header__block-3 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/** MAIN **/
+.main__title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+
+.main__title--left-border {
+    border-right: 4px solid #41F6D7;
+    height: 40px;
+    border-radius: 0 15px 15px 0;
+}
+
+h1 {
+    font-family: 'TTLakes', serif;
+    font-size: 28px;
+    margin: 0;
+    padding-left: 12px;
+    color: #1B1C21;
+    width: max(100%, 100%);
+}
+
+.tab-menu {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 32px 24px;
+}
+
+.tab-button {
+    display: flex;
+    flex-flow: row nowrap;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TTLakes', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7E7E82;
+    background: transparent;
+    height: 40px;
+    padding: 0 12px;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.tab-button:hover {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+}
+
+.tab-button.active {
+    background-color: #FFFFFF;
+    border: 2px solid #B8FFEC;
+    border-radius: 6px;
+}
+
+
+
+@media screen and (min-width: 320px) {
+
+    #header__line--first {
+        display: none;
+    }
+
+    .header__block-2 {
+        display: none;
+    }
+
+    .tab-menu {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .main__title--options {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #header__line--first {
+        display: block;
+    }
+
+    #header__line--second {
+        display: none;
+    }
+
+    .header__block-2 {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+        justify-content: right;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .main__title--options {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    header {
+        display: none;
+        height: 18px;
+    }
+
+    .main__title--options {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        width: max-content;
+        gap: 30px;
+    }
+
+    .nav__link {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        color: #1B1C21;
+        font-size: 16px;
+        gap: 8px;
+        text-decoration: none;
+    }
+}
