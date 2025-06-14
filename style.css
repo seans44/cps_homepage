@@ -14,7 +14,6 @@
 
 body {
     background-color: #F8F8F8;
-    height: 800px;
     margin: 0;
     font-family: 'TTLakes', serif;
     font-size: 14px;
@@ -83,10 +82,9 @@ header {
 h1 {
     font-family: 'TTLakes', serif;
     font-size: 28px;
-    margin: 0;
-    padding-left: 12px;
     color: #1B1C21;
     width: max(100%, 100%);
+    margin: 0;
 }
 
 .tab-menu {
@@ -94,7 +92,6 @@ h1 {
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
-    margin: 32px 24px;
 }
 
 .tab-button {
@@ -124,8 +121,27 @@ h1 {
     border-radius: 6px;
 }
 
+.read-more-btn {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    background: transparent;
+    border: transparent;
+    height: 24px;
+    font-family: 'TTLakes', serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.read-more-btn:hover {
+    color: #59f3d8;
+}
 
 
+/* SMARTPHONE */
 @media screen and (min-width: 320px) {
 
     #header__line--first {
@@ -136,18 +152,58 @@ h1 {
         display: none;
     }
 
+    h1 {
+        margin-left: 14px;
+    }
+
     .tab-menu {
         display: flex;
         flex-flow: row nowrap;
         overflow-x: auto;
         scrollbar-width: none;
+        margin: 14px 16px;
     }
 
     .main__title--options {
         display: none;
     }
+
+    .main__content--hide-p {
+        display: none;
+    }
+
+    .main__content {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .main__content--text-block {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0 16px;
+
+    }
+
+    .main__content--text-block--image {
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .main__image--logo {
+        width: 100%;
+    }
+
+    #tab-button--hidden {
+        display: none;
+    }
 }
 
+
+/* TABLET */
 @media screen and (min-width: 768px) {
 
     #header__line--first {
@@ -156,6 +212,10 @@ h1 {
 
     #header__line--second {
         display: none;
+    }
+
+    h1 {
+        margin-left: 22px;
     }
 
     .header__block-2 {
@@ -170,12 +230,75 @@ h1 {
     .main__title--options {
         display: none;
     }
+
+    .main__content {
+        justify-content: space-between;
+    }
+
+    .tab-menu {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        margin: 22px 24px;
+    }
+
+    .main__content--text-block {
+        width: 50%;
+        padding: 0 24px;
+    }
+
+    .main__content--text-block--image {
+        width: 50%;
+    }
+
+    .main__content--hide-p {
+        display: inline;
+    }
+
+    .main__content--hide-span {
+        display: none;
+    }
+
+    .main__content {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .main__content--text-block {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .main__content--text-block--image {
+        width: 50%;
+        padding: 0 25px
+    }
+
+    .main__image--logo {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+
 }
 
+
+/* DESKTOP */
 @media screen and (min-width: 1120px) {
     header {
         display: none;
         height: 18px;
+    }
+
+    h1 {
+        margin-left: 33px;
     }
 
     .main__title--options {
@@ -186,6 +309,7 @@ h1 {
         height: 100%;
         width: max-content;
         gap: 30px;
+        padding-right: 32px;
     }
 
     .nav__link {
@@ -198,5 +322,24 @@ h1 {
         font-size: 16px;
         gap: 8px;
         text-decoration: none;
+    }
+
+    .main__content--text-block {
+        padding: 0 35px;
+    }
+
+    .tab-menu {
+        display: flex;
+        flex-flow: row wrap;
+        overflow-x: auto;
+        margin: 8px 35px;
+    }
+
+    .main__content--hide-span {
+        display: inline;
+    }
+
+    #tab-button--hidden {
+        display: flex;
     }
 }
