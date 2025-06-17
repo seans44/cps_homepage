@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block_5_mobile_menu</title>
+    <link rel="stylesheet" href="mobile_menu_style.css">
+</head>
+<body>
+
+<button id="toggleBtn">
+    <img src="../icon/burger.svg" class="image__icon" alt="menu">
+</button>
+
+<div class="menu" id="menu">
+    <div class="menu__header">
+        <button>
+            <img src="../icon/close.svg" alt="Close" class="image__icon" id="closeBtn">
+        </button>
+        <button>
+            <img src="../image/Group.svg" alt="Logo" class="image__logo">
+        </button>
+        <button>
+            <img src="../icon/search.svg" alt="Search" class="image__icon">
+        </button>
+    </div>
+
+    <div class="main">
+        <ul class="menu__list">
+            <li><button>Ремонт техники</button></li>
+            <li><button>Услуги и сервисы</button></li>
+            <li><button>Корпоративным клиентам</button></li>
+            <li><button>Продавцам техники</button></li>
+            <li><button>Партнёрам</button></li>
+            <li><button>Производителям</button></li>
+            <li><button>Наши сервисные центры</button></li>
+            <li><button>Контакты</button></li>
+        </ul>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="menu__footer">
+        <div class="menu__footer__buttons">
+            <button><img src="../icon/call.svg" alt="call" class="image__icon"></button>
+            <button><img src="../icon/chat.svg" alt="chat" class="image__icon"></button>
+            <button><img src="../icon/profile.svg" alt="profile" class="image__icon"></button>
+        </div>
+        <a href="mailto:mail@cps.com">mail@cps.com</a>
+        <p class="telephone">8 800 890 8900</p>
+        <div class="menu__footer__buttons" id="menu__footer__buttons--language">
+            <button autofocus>RU</button>
+            <button>EN</button>
+            <button>CH</button>
+        </div>
+    </div>
+</div>
+<script>
+    const btn1 = document.getElementById('toggleBtn');
+    const btn2 = document.getElementById('closeBtn');
+    const menu = document.getElementById('menu');
+
+    btn1.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+    btn2.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
