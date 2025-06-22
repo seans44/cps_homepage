@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'TTLakes', serif;
+    font-size: 16px;
+    color: #7E7E82;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: linear-gradient(to right, #F8F8F8, #FFFFFF);
+    border-top: #D9FFF5 1px solid;
+    min-height: 56px;
+    max-height: 80px;
+    padding: 0 16px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    background: #F8F8F8;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.swiper::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 100%;
+    background-image: linear-gradient(to right, #F8F8F800, #F8F8F8);
+    z-index: 10;
+}
+
+.swiper-slide {
+    width: max-content;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 0 16px 16px;
+}
+
+.swiper-slide:last-child {
+    padding-right: 16px;
+}
+
+.swiper-slide__button {
+    width: 240px;
+    height: 72px;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 6px;
+}
+
+.brand-logo {
+    max-height: 40px;
+    max-width: 130px;
+    object-fit: cover;
+}
+
+.go-button {
+    height: 40px;
+}
+
+.swiper-slide:nth-child(1n) {
+    width: max-content;
+}
+
+.swiper-pagination-bullet {
+    background: #DDDDDD;
+    width: 12px;
+    height: 12px;
+    opacity: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    background: #B5B6BC;
+    opacity: 100%;
+}
+
+@media screen and ( min-width: 320px ) {
+    .read-more-btn {
+        display: none;
+    }
+}
+
+@media screen and ( min-width: 768px) {
+
+    body {
+        background: #F8F8F8;
+    }
+
+    .header {
+        padding: 0 24px;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    .swiper {
+        width: max-content;
+        height: max-content;
+        padding: 24px;
+        background-color: transparent;
+        flex-flow: column wrap;
+    }
+
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /*max-height: 100px;*/
+        grid-gap: 16px 32px;
+    }
+
+    .swiper-slide {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .swiper-slide__button {
+        width: 240px;
+        height: 72px;
+        background: #FFFFFF;
+        border: 1px solid #EAEAEA;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        border-radius: 6px;
+    }
+
+    .swiper-slide:last-child {
+        padding-right: 0;
+    }
+
+    .read-more-btn {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+        background: transparent;
+        border: transparent;
+        height: 24px;
+        margin-top: 24px;
+        font-family: 'TTLakes', serif;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .read-more-btn:hover {
+        color: #59f3d8;
+    }
+
+    .read-more-btn__icon {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s;
+    }
+
+    /* Ограниченная высота — будет задаваться через JS */
+    .swiper-wrapper.collapsed {
+        max-height: 0;
+    }
+
+    /* Кнопка */
+    #toggle-button {
+        cursor: pointer;
+    }
+
+}
+
+@media screen and ( min-width: 1120px) {
+    .swiper-wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ремонт брендов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="brand_services_style.css"/>
+</head>
+<body>
+
+<header class="header">
+    <p>РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</p>
+</header>
+
+<!-- FOR MOBILE -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper" id="grid">
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-lenovo.svg" alt="Lenovo" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-samsung.svg" alt="samsung" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-apple.svg" alt="apple" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-viewsonic.svg" alt="viewsonic" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-bosch.svg" alt="bosch" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-hp.svg" alt="hp" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide.hidden--tablet">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-acer.svg" alt="acer" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide.hidden--tablet">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-sony.svg" alt="sony" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide.hidden--desktop">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-lenovo.svg" alt="lenovo" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide.hidden--desktop">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-samsung.svg" alt="samsung" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+        <div class="swiper-slide.hidden--desktop">
+            <button class="swiper-slide__button">
+                <img src="../image/brand-logo-apple.svg" alt="apple" class="brand-logo">
+                <img src="../icon/go.svg" alt="Go" class="go-button">
+            </button>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <button class="read-more-btn" id="toggle-button">
+        <img src="../icon/expand.svg" alt="read-more" class="read-more-btn__icon" id="toggle-icon">
+        <span id="toggle-text">Показать все</span>
+    </button>
+</div>
+
+
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    if (window.innerWidth < 768) {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 0,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+</script>
+
+<script>
+    const button = document.getElementById('toggle-button');
+    const icon = document.getElementById('toggle-icon');
+    const text = document.getElementById('toggle-text');
+    const grid = document.getElementById('grid');
+    let isExpanded = false;
+
+    function updateGridView() {
+        const items = Array.from(grid.children);
+        const screenWidth = window.innerWidth;
+
+        let visibleCount = 8;
+        if (screenWidth < 1120) {
+            visibleCount = 6;
+        } else {
+            visibleCount = 8;
+        }
+
+        items.forEach((item, index) => {
+            item.style.display = isExpanded || index < visibleCount ? 'block' : 'none';
+        });
+
+        if (isExpanded) {
+            text.textContent = 'Скрыть';
+            icon.src = '../icon/hide.svg';
+            icon.alt = 'collapse';
+        } else {
+            text.textContent = 'Показать все';
+            icon.src = '../icon/expand.svg';
+            icon.alt = 'expand';
+        }
+    }
+
+    button.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        updateGridView();
+    });
+
+    window.addEventListener('resize', () => {
+        if (!isExpanded) updateGridView();
+    });
+
+    updateGridView();
+</script>
+
+</body>
+</html>
